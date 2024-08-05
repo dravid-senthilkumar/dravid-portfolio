@@ -2,6 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Playwrite+AU+VIC:wght@100..400&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Lusitana:wght@400;700&family=Playwrite+AU+VIC:wght@100..400&family=Timmana&display=swap');
+
 *{
     font-family: Outfit;
     box-sizing: border-box;
@@ -48,6 +50,7 @@
   width: 300px;
 }
 
+
 #contact a span{
   color: rgb(190, 185, 185);
 }
@@ -56,8 +59,64 @@ a{
   text-decoration: none;
 }
 
-.social-icons a i{
-  color: #ff004f;
-  margin-left: 15px;
-  font-size: 25px;
+.social-icons{
+  width: 33px;
+  margin-top: 20px;
+  margin-right: 20px;
+  border: 1px solid turquoise;
+  border-radius: 10px;
+}
+
+.content{
+  font-family: "Lusitana", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nav-link:hover{
+  color: tomato;
+}
+
+.goLive:hover{
+  transform: scale(1.03);
+}
+
+.card-img-top:hover{
+  transform: scale(1.03);
+}
+
+.bth:hover{
+  transform: scale(1.03);
+}
+
+.projectLogo:hover{
+  transform: none;
+}
+
+.top-icons{
+  width: 30px;
+  margin-top: 40px;
+  margin-right: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.top-icons-div{
+  margin-left: 13px;
+}
+
+.pro-div{
+  height: 395px;
+}
+
+.mail,.phn{
+  width: 30px;
+}
+
+.con{
+  margin-left: 7px;
+}
+
+.top-icons:hover{
+  transform: scale(1.12);
 }
