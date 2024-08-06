@@ -144,3 +144,17 @@ a{
   margin-top: 12px;
   color:green;
 }
+
+.project-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  
+}
+
+@media (max-width:750px) {
+  .project-row{
+    display: grid;
+    grid-template-columns: none;
+    margin-left: 10px;
+  }
+}
