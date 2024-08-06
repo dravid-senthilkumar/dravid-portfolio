@@ -149,7 +149,7 @@
 
             <div class="row gap-5">
 
-              <div class="col-md-3 mt-4 me-5  text-center">
+              <div class="col-md-3 mt-4  text-center">
                 <div class="card border-warning mt-5 me-5 pro-com" style="width: 18rem;">
                   <img src="Image/about.png" class="card-img-top projectLogo" alt="...">
                 </div>
@@ -197,7 +197,7 @@
           </div>
 
           <div class="row justify-content-center gap-5">
-            <div class="col-md-5 text-light mt-5">
+            <div class="col-md-4 text-light mt-5">
               <h5 class="">If you are interested in my work then discuss more in detail, <br> please contact me</h5>
               <br>
               <p class="contact"><img class="mail" src="Image/mail.png" alt=""> <a href="mailto:dravidsenthil9@gmail.com"> <span class="con">dravidsenthil9@gmail.com</span> </a></p>
@@ -212,30 +212,31 @@
               </div>
             </div>
 
-            <div class="col-md-5">
-
+            <div class="col-md-4">
+              <form name="submit-to-google-sheet">
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label class text-light">Name</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                <input type="text" name="Name" class="form-control" id="exampleFormControlInput1" placeholder="">
               </div>
 
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label text-light">Mobile</label>
-                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="">
+                <input type="number" name="Mobile" class="form-control" id="exampleFormControlInput1" placeholder="">
               </div>
 
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label text-light">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+                <input type="email" name="Email" class="form-control" id="exampleFormControlInput1" placeholder="">
               </div>
               
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label text-light">Subject</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" name="Message" id="exampleFormControlTextarea1" rows="3"></textarea>
               </div>
 
-              <input class="btn bth btn-primary" type="submit" value="Submit">
-
+              <input class="btn bth btn-primary subbtn" type="submit" value="Submit">
+            </form>
+            <span id="msg"></span>
             </div>
           </div>
         </div>
@@ -251,6 +252,24 @@
         </div>
       </footer>
     
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwWaCoLfb3Ca5MrU4Wv9svERt81lk79cTiYnZMinifA4JGXfd_eViBo3UCjVfEnvqo_/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+              msg.innerHTML = "message sent successfully"
+              setTimeout(function(){
+                msg.innerHTML = ""
+              },2000)
+              form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
