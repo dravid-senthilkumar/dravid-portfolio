@@ -107,6 +107,7 @@ a{
 
 .pro-div{
   height: 395px;
+  margin-left: 10px;
 }
 
 .mail,.phn{
@@ -119,4 +120,15 @@ a{
 
 .top-icons:hover{
   transform: scale(1.12);
+}
+
+.pro-com{
+  margin-left: 38px;
+}
+
+@media (max-width:750px) {
+
+  .pro-com{
+    
+  }
 }
