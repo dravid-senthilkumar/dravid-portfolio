@@ -20,14 +20,21 @@
 }
 
 .banner{
-    background-color: rgb(160, 131, 187);
+    background-color:  rgb(231, 170, 3);
     padding: 120px 0;
+    /* background-image: url('../Image/back5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; */
 }
 
 /* rgb(160, 131, 187) */
 
 .profile{
   border-radius: 17px 0px 17px 0px;
+}
+
+.round{
+  border-radius: 20px 20px 20px 20px;
 }
 
 .card-text{
