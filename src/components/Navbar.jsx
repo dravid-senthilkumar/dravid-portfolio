@@ -24,7 +24,6 @@ export default function Navbar() {
     { name: 'Tech Stack', href: '#skills' },
     { name: 'Experience', href: '#experience' },
     { name: 'My projects', href: '#projects' },
-    { name: 'Contact me', href: '#contact' },
   ]
 
   return (
