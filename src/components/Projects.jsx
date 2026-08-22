@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ExternalLink, Layers, ShoppingBag, MessageSquare, Flame } from 'lucide-react'
+import { ExternalLink, ShoppingBag, MessageSquare, Flame } from 'lucide-react'
 import { GithubIcon } from './BrandIcons'
 
 export default function Projects() {
@@ -13,7 +13,7 @@ export default function Projects() {
       liveLink: "https://glitch-ecommerce.vercel.app/",
       githubLink: "https://github.com/dravid-senthilkumar/glitch-ecommerce",
       featured: true,
-      icon: <ShoppingBag className="w-5 h-5 text-[#ff004f]" />
+      icon: <ShoppingBag className="w-5 h-5 text-[#b85233]" />
     },
     {
       title: "Romato Food-Order App",
@@ -23,7 +23,7 @@ export default function Projects() {
       liveLink: "https://romato-food-delivery.netlify.app/",
       githubLink: "https://github.com/dravid-senthilkumar/romato-food-delivery",
       featured: false,
-      icon: <Flame className="w-5 h-5 text-[#e7aa03]" />
+      icon: <Flame className="w-5 h-5 text-[#b85233]" />
     },
     {
       title: "Zitter Social Platform",
@@ -33,15 +33,16 @@ export default function Projects() {
       liveLink: "https://zitter-social-network.netlify.app/",
       githubLink: "https://github.com/dravid-senthilkumar/zitter-social-network",
       featured: false,
-      icon: <MessageSquare className="w-5 h-5 text-blue-400" />
+      icon: <MessageSquare className="w-5 h-5 text-[#b85233]" />
     }
   ]
 
   return (
-    <section id="projects" className="py-24 bg-[#070709] border-b border-gray-900 relative">
-      {/* Background decoration */}
-      <div className="absolute top-1/3 left-0 w-80 h-80 rounded-full bg-[#ff004f]/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/3 right-0 w-80 h-80 rounded-full bg-[#e7aa03]/5 blur-3xl pointer-events-none" />
+    <section id="projects" className="py-24 bg-[#FAF6EE] border-b border-[#E6DFD3] relative paper-texture">
+      {/* Decorative SVG curves to replicate Figma concentric lines */}
+      <div className="absolute top-12 right-0 w-48 h-48 border border-[#b85233]/15 rounded-full pointer-events-none z-0 flex items-center justify-center">
+        <div className="w-36 h-36 border border-[#b85233]/10 rounded-full" />
+      </div>
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         {/* Section Heading */}
@@ -51,18 +52,18 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold tracking-tight font-outfit"
+            className="text-4xl font-extrabold font-serif-heading text-[#b85233]"
           >
-            My Strongest <span className="text-[#ff004f]">Works</span>
+            My Strongest Works
           </motion.h2>
           <motion.div 
             initial={{ width: 0 }}
             whileInView={{ width: 60 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="h-1 bg-[#ff004f] mx-auto mt-4 rounded-full"
+            className="h-[3px] bg-[#b85233] mx-auto mt-4 rounded-full"
           />
-          <p className="text-gray-400 mt-6 text-sm sm:text-base leading-relaxed">
+          <p className="text-[#1C1C1E]/60 mt-6 text-sm leading-relaxed font-outfit">
             Real-world full-stack MERN and client-side applications that showcase responsive layouts, complex API integrations, and premium state management.
           </p>
         </div>
@@ -71,26 +72,26 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectList.map((project, idx) => (
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               key={project.title}
-              className={`rounded-2xl border bg-[#141418] hover:shadow-2xl overflow-hidden flex flex-col justify-between group transition-all duration-300 ${
+              className={`rounded-3xl border bg-[#fffdfa] overflow-hidden flex flex-col justify-between group transition-all duration-300 shadow-[0_4px_15px_rgba(0,0,0,0.01)] hover:shadow-lg ${
                 project.featured 
-                  ? 'border-[#ff004f]/40 hover:border-[#ff004f] shadow-lg shadow-[#ff004f]/5' 
-                  : 'border-gray-900 hover:border-gray-800'
+                  ? 'border-[#b85233]/50 hover:border-[#b85233]' 
+                  : 'border-[#e6dfd3] hover:border-[#b85233]/40'
               }`}
             >
               {/* Card Banner Image */}
-              <div className="relative overflow-hidden aspect-video bg-gray-900 border-b border-gray-900">
+              <div className="relative overflow-hidden aspect-video bg-[#faf6ee] border-b border-[#e6dfd3]">
                 <img 
                   src={project.image} 
                   alt={`${project.title} mockup`} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
                 {project.featured && (
-                  <span className="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-[#ff004f] text-white flex items-center gap-1 shadow-md">
+                  <span className="absolute top-4 right-4 px-3.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full bg-[#b85233] text-white shadow-sm">
                     Featured MERN App
                   </span>
                 )}
@@ -99,16 +100,16 @@ export default function Projects() {
               {/* Card Body */}
               <div className="p-6 flex-grow flex flex-col justify-between space-y-6">
                 <div className="space-y-3">
-                  <div className="flex items-center gap-2">
-                    <div className="p-1.5 rounded-lg bg-gray-900 border border-gray-800">
+                  <div className="flex items-center gap-2.5">
+                    <div className="p-2 rounded-xl bg-[#faf6ee] border border-[#e6dfd3]">
                       {project.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-[#ff004f] transition-colors">
+                    <h3 className="text-lg font-bold text-[#1C1C1E] group-hover:text-[#b85233] transition-colors font-serif-heading">
                       {project.title}
                     </h3>
                   </div>
 
-                  <p className="text-gray-400 text-sm leading-relaxed font-outfit">
+                  <p className="text-[#1C1C1E]/70 text-xs sm:text-sm leading-relaxed font-outfit">
                     {project.description}
                   </p>
                 </div>
@@ -117,19 +118,19 @@ export default function Projects() {
                   {/* Tech stack badging */}
                   <div className="flex flex-wrap gap-1.5">
                     {project.tech.map((t) => (
-                      <span key={t} className="px-2 py-0.5 rounded text-[11px] font-mono bg-gray-900 border border-gray-800 text-gray-400">
+                      <span key={t} className="px-2.5 py-0.5 rounded-lg text-xs font-semibold bg-[#faf6ee] border border-[#e6dfd3] text-[#1C1C1E]/60">
                         {t}
                       </span>
                     ))}
                   </div>
 
                   {/* Actions Links */}
-                  <div className="flex items-center gap-4 pt-3 border-t border-gray-900/60">
+                  <div className="flex items-center gap-4 pt-3.5 border-t border-[#e6dfd3]/60">
                     <a
                       href={project.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-sm font-semibold text-[#ff004f] hover:text-[#ff004f]/80 transition-colors"
+                      className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#b85233] hover:text-[#b85233]/80 transition-colors"
                     >
                       <ExternalLink className="w-4 h-4" />
                       Go Live
@@ -138,7 +139,7 @@ export default function Projects() {
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 text-sm font-semibold text-gray-400 hover:text-white transition-colors"
+                      className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#1C1C1E]/60 hover:text-[#b85233] transition-colors"
                     >
                       <GithubIcon className="w-4 h-4" />
                       Github Code

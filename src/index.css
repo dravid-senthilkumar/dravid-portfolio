@@ -4,8 +4,12 @@
 
 @layer base {
   :root {
-    --brand-warning: #e7aa03;
-    --brand-pink: #ff004f;
+    --brand-terracotta: #b85233;
+    --brand-charcoal: #1c1c1e;
+    --brand-cream: #faf6ee;
+    --brand-cream-dark: #f3ede2;
+    --brand-border: #e6dfd3;
+    --brand-card-bg: #fffdfa;
   }
   
   html {
@@ -13,34 +17,66 @@
   }
   
   body {
-    background-color: #0b0b0d;
-    color: #f3f4f6;
+    background-color: var(--brand-cream);
+    color: var(--brand-charcoal);
   }
 
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #0f0f11;
+    background: var(--brand-cream-dark);
   }
   ::-webkit-scrollbar-thumb {
-    background: #2a2a32;
-    border-radius: 4px;
+    background: #d6cdbc;
+    border-radius: 5px;
+    border: 2px solid var(--brand-cream-dark);
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #ff004f;
+    background: var(--brand-terracotta);
   }
 }
 
-.gradient-text-pink {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-pink-400 to-[#ff004f];
+/* Paper Grain Texture */
+.paper-texture {
+  position: relative;
+}
+.paper-texture::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-.gradient-text-warning {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-yellow-300 to-[#e7aa03];
+/* Custom Text Fonts & Utilities */
+.font-signature {
+  font-family: 'Alex Brush', cursive, sans-serif;
+}
+
+.font-serif-heading {
+  font-family: 'Playfair Display', serif;
 }
 
 .glass-card {
-  @apply bg-[#141418]/65 backdrop-blur-md border border-[#2a2a32] rounded-2xl shadow-xl hover:border-[#ff004f]/40 transition-all duration-300;
+  @apply bg-[#fffdfa]/90 backdrop-blur-md border border-[#e6dfd3] rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:border-[#b85233]/40 transition-all duration-500;
+}
+
+/* Custom animations */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.03);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s infinite ease-in-out;
 }

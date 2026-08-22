@@ -11,7 +11,7 @@ export default function Experience() {
       period: "Oct 2025 - Present",
       duration: "8 mos",
       location: "Hosur, Tamil Nadu, India (On-site)",
-      skills: ["JavaScript", "React.js", "Node.js", "Express.js", "Socket.io", "Redis", "BullMQ", "Microservices", "Docker", "Nginx", "DigitalOcean Cloud", "RESTful APIs", "State Management"],
+      skills: ["JavaScript", "React.js", "Node.js", "Express.js", "Socket.io", "Redis", "BullMQ", "Microservices", "Docker", "Nginx", "DigitalOcean Cloud", "RESTful APIs"],
       points: [
         "Architecting modern MERN solutions and migrating legacy systems to a highly scalable Microservices design.",
         "Implementing event-driven, real-time bi-directional features using Socket.io cluster networks and Redis Pub/Sub adapters.",
@@ -51,23 +51,22 @@ export default function Experience() {
       ]
     },
     {
-      degree: "Bachelor of Engineering - BE, Electronics and Instrumentation Engineering",
+      degree: "Bachelor of Engineering - BE",
       institution: "Hindusthan College of Engineering and Technology",
       period: "Jul 2020 - May 2024",
       skills: ["Control Systems", "Digital Circuits", "Automation", "Analytical Problem Solving"],
       points: [
         "Studied engineering core fundamentals, industrial instrumentation, and automated control logic.",
-        "Graduated with a stellar academic rating of 8.47 CGPA.",
-        "Applied logical and analytical methodologies to design hardware-software process automations."
+        "Graduated with a stellar academic rating of 8.47 CGPA."
       ]
     }
   ]
 
   return (
-    <section id="experience" className="py-24 bg-[#0a0a0c] border-b border-gray-900 relative">
-      {/* Decorative Gradients */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 rounded-full bg-[#ff004f]/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-[#e7aa03]/5 blur-3xl pointer-events-none" />
+    <section id="experience" className="py-24 bg-[#FAF6EE] border-b border-[#E6DFD3] relative paper-texture">
+      {/* Decorative Blur Backgrounds */}
+      <div className="absolute top-1/2 left-0 w-96 h-96 rounded-full bg-[#b85233]/2 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-[#b85233]/3 blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         {/* Section Heading */}
@@ -77,18 +76,18 @@ export default function Experience() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold tracking-tight font-outfit"
+            className="text-4xl font-extrabold font-serif-heading text-[#b85233]"
           >
-            Professional <span className="text-[#ff004f]">Journey</span>
+            Professional Journey
           </motion.h2>
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: 60 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="h-1 bg-[#ff004f] mx-auto mt-4 rounded-full"
+            className="h-[3px] bg-[#b85233] mx-auto mt-4 rounded-full"
           />
-          <p className="text-gray-400 mt-6 text-sm sm:text-base leading-relaxed">
+          <p className="text-[#1C1C1E]/60 mt-6 text-sm leading-relaxed font-outfit">
             A chronological timeline of my work experience as a developer and specialized technical training.
           </p>
         </div>
@@ -97,13 +96,13 @@ export default function Experience() {
           {/* Work Experience Timeline - 7 cols */}
           <div className="lg:col-span-7 space-y-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-2.5 rounded-xl bg-[#ff004f]/10 text-[#ff004f]">
+              <div className="p-2.5 rounded-2xl bg-[#b85233]/5 text-[#b85233] border border-[#b85233]/10">
                 <Briefcase className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold text-white">Work Experience</h3>
+              <h3 className="text-2xl font-bold font-serif-heading text-[#1C1C1E]">Work Experience</h3>
             </div>
 
-            <div className="relative border-l-2 border-gray-800 ml-4 pl-8 space-y-12">
+            <div className="relative border-l-2 border-[#e6dfd3] ml-4 pl-8 space-y-12">
               {experiences.map((exp, idx) => (
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
@@ -113,48 +112,48 @@ export default function Experience() {
                   key={idx}
                   className="relative group"
                 >
-                  {/* Glowing Indicator Dot */}
-                  <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-[#141418] border-2 border-gray-800 flex items-center justify-center group-hover:border-[#ff004f] transition-colors duration-300">
-                    <div className="w-2.5 h-2.5 rounded-full bg-gray-600 group-hover:bg-[#ff004f] transition-colors duration-300" />
+                  {/* Indicator Dot */}
+                  <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-[#fffdfa] border-2 border-[#e6dfd3] flex items-center justify-center group-hover:border-[#b85233] transition-colors duration-300">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#d6cdbc] group-hover:bg-[#b85233] transition-colors duration-300" />
                   </div>
 
-                  <div className="glass-card p-6 md:p-8 space-y-4 hover:border-[#ff004f]/35 hover:shadow-2xl hover:shadow-[#ff004f]/5">
+                  <div className="p-6 md:p-8 rounded-3xl bg-[#fffdfa] border border-[#e6dfd3] space-y-4 hover:border-[#b85233]/30 hover:shadow-lg transition-all duration-300">
                     {/* Header */}
                     <div className="flex flex-wrap items-start justify-between gap-3">
                       <div>
-                        <h4 className="text-xl font-bold text-white group-hover:text-[#ff004f] transition-colors duration-200">
+                        <h4 className="text-lg font-bold text-[#1C1C1E] group-hover:text-[#b85233] transition-colors duration-200 font-serif-heading">
                           {exp.role}
                         </h4>
-                        <span className="text-sm font-semibold text-gray-300 mt-1 block">
-                          {exp.company} <span className="text-[#ff004f]/70 font-mono text-xs px-2 py-0.5 rounded-full bg-[#ff004f]/5 border border-[#ff004f]/10 ml-2">{exp.type}</span>
+                        <span className="text-xs font-semibold text-[#1C1C1E]/70 mt-1 block">
+                          {exp.company} <span className="text-[#b85233] font-bold text-[10px] px-2 py-0.5 rounded-full bg-[#b85233]/5 border border-[#b85233]/15 ml-2 uppercase tracking-wide">{exp.type}</span>
                         </span>
                       </div>
-                      <div className="flex flex-col items-end text-xs text-gray-500 font-mono gap-1">
-                        <span className="flex items-center gap-1">
-                          <Calendar className="w-3.5 h-3.5" />
+                      <div className="flex flex-col items-end text-[11px] text-[#1C1C1E]/50 font-mono gap-1">
+                        <span className="flex items-center gap-1 font-semibold">
+                          <Calendar className="w-3.5 h-3.5 text-[#b85233]" />
                           {exp.period}
                         </span>
                         <span>({exp.duration})</span>
                       </div>
                     </div>
 
-                    {/* Metadata */}
-                    <div className="flex items-center gap-1.5 text-xs text-gray-400 font-medium">
-                      <MapPin className="w-4 h-4 text-gray-500" />
+                    {/* Location */}
+                    <div className="flex items-center gap-1.5 text-xs text-[#1C1C1E]/50 font-semibold font-outfit">
+                      <MapPin className="w-4 h-4 text-[#b85233]" />
                       {exp.location}
                     </div>
 
-                    {/* Key Details bullet list */}
-                    <ul className="list-disc pl-5 text-gray-400 text-sm space-y-1.5 leading-relaxed font-outfit">
+                    {/* Key Details list */}
+                    <ul className="list-disc pl-5 text-[#1C1C1E]/70 text-xs sm:text-sm space-y-2 leading-relaxed font-outfit">
                       {exp.points.map((pt, pIdx) => (
                         <li key={pIdx}>{pt}</li>
                       ))}
                     </ul>
 
-                    {/* Tech tag list */}
+                    {/* Tech tags */}
                     <div className="flex flex-wrap gap-2 pt-2">
                       {exp.skills.map((s) => (
-                        <span key={s} className="px-2.5 py-0.5 rounded-md text-xs font-mono bg-gray-900 border border-gray-800 text-gray-400">
+                        <span key={s} className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-[#faf6ee] border border-[#e6dfd3] text-[#1C1C1E]/60">
                           {s}
                         </span>
                       ))}
@@ -168,13 +167,13 @@ export default function Experience() {
           {/* Education Timeline - 5 cols */}
           <div className="lg:col-span-5 space-y-8">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-2.5 rounded-xl bg-[#e7aa03]/10 text-[#e7aa03]">
+              <div className="p-2.5 rounded-2xl bg-[#b85233]/5 text-[#b85233] border border-[#b85233]/10">
                 <GraduationCap className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-bold text-white">Education & Training</h3>
+              <h3 className="text-2xl font-bold font-serif-heading text-[#1C1C1E]">Education & Training</h3>
             </div>
 
-            <div className="relative border-l-2 border-gray-800 ml-4 pl-8 space-y-12">
+            <div className="relative border-l-2 border-[#e6dfd3] ml-4 pl-8 space-y-12">
               {education.map((edu, idx) => (
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
@@ -184,29 +183,29 @@ export default function Experience() {
                   key={idx}
                   className="relative group"
                 >
-                  {/* Glowing Indicator Dot */}
-                  <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-[#141418] border-2 border-gray-800 flex items-center justify-center group-hover:border-[#e7aa03] transition-colors duration-300">
-                    <div className="w-2.5 h-2.5 rounded-full bg-gray-600 group-hover:bg-[#e7aa03] transition-colors duration-300" />
+                  {/* Indicator Dot */}
+                  <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-[#fffdfa] border-2 border-[#e6dfd3] flex items-center justify-center group-hover:border-[#b85233] transition-colors duration-300">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#d6cdbc] group-hover:bg-[#b85233] transition-colors duration-300" />
                   </div>
 
-                  <div className="glass-card p-6 md:p-8 space-y-4 hover:border-[#e7aa03]/35 hover:shadow-2xl hover:shadow-[#e7aa03]/5">
+                  <div className="p-6 md:p-8 rounded-3xl bg-[#fffdfa] border border-[#e6dfd3] space-y-4 hover:border-[#b85233]/30 hover:shadow-lg transition-all duration-300">
                     {/* Header */}
                     <div className="flex flex-wrap items-start justify-between gap-3">
                       <div>
-                        <h4 className="text-lg font-bold text-white group-hover:text-[#e7aa03] transition-colors duration-200">
+                        <h4 className="text-base font-bold text-[#1C1C1E] group-hover:text-[#b85233] transition-colors duration-200 font-serif-heading">
                           {edu.degree}
                         </h4>
-                        <span className="text-sm font-semibold text-gray-300 mt-1 block">
+                        <span className="text-xs font-semibold text-[#1C1C1E]/70 mt-1 block">
                           {edu.institution}
                         </span>
                       </div>
-                      <div className="text-xs text-gray-500 font-mono flex items-center gap-1 mt-1">
-                        <Calendar className="w-3.5 h-3.5" />
+                      <div className="text-[11px] text-[#1C1C1E]/50 font-semibold font-mono flex items-center gap-1 mt-1">
+                        <Calendar className="w-3.5 h-3.5 text-[#b85233]" />
                         {edu.period}
                       </div>
                     </div>
 
-                    <ul className="list-disc pl-5 text-gray-400 text-sm space-y-1.5 leading-relaxed font-outfit">
+                    <ul className="list-disc pl-5 text-[#1C1C1E]/70 text-xs sm:text-sm space-y-2 leading-relaxed font-outfit">
                       {edu.points.map((pt, pIdx) => (
                         <li key={pIdx}>{pt}</li>
                       ))}
@@ -215,7 +214,7 @@ export default function Experience() {
                     {/* Tech tags */}
                     <div className="flex flex-wrap gap-2 pt-2">
                       {edu.skills.map((s) => (
-                        <span key={s} className="px-2.5 py-0.5 rounded-md text-xs font-mono bg-gray-900 border border-gray-800 text-gray-400">
+                        <span key={s} className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-[#faf6ee] border border-[#e6dfd3] text-[#1C1C1E]/60">
                           {s}
                         </span>
                       ))}
@@ -228,9 +227,9 @@ export default function Experience() {
                           href={edu.certLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[#e7aa03] hover:text-white transition-all px-3 py-1.5 rounded-lg bg-[#e7aa03]/10 border border-[#e7aa03]/25 hover:bg-[#e7aa03]/20 shadow-md shadow-[#e7aa03]/5 hover:shadow-lg hover:shadow-[#e7aa03]/10"
+                          className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full bg-[#b85233]/5 border border-[#b85233]/25 text-[#b85233] hover:bg-[#b85233] hover:text-white hover:shadow-md transition-all duration-300"
                         >
-                          <Award className="w-3.5 h-3.5" />
+                          <Award className="w-4 h-4" />
                           Verify Certificate
                         </a>
                       </div>
