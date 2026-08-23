@@ -11,7 +11,7 @@ import Footer from './components/Footer'
 
 export default function App() {
   return (
-    <div className="relative min-h-screen bg-[#070709] text-gray-100 selection:bg-[#ff004f] selection:text-white">
+    <div className="relative min-h-screen bg-[#FAF6EE] text-[#1C1C1E] selection:bg-[#b85233] selection:text-white overflow-x-hidden w-full max-w-[100vw]">
       {/* Sticky Header Navigation */}
       <Navbar />
 

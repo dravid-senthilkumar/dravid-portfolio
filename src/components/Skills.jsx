@@ -162,7 +162,7 @@ export default function Skills() {
     : skillsList.filter(skill => skill.category === filter)
 
   return (
-    <section id="skills" className="py-24 bg-[#FAF6EE] border-b border-[#E6DFD3] relative paper-texture overflow-hidden">
+    <section id="skills" className="py-16 sm:py-24 bg-[#FAF6EE] border-b border-[#E6DFD3] relative paper-texture overflow-hidden scroll-mt-20">
       {/* Decorative concentric arches outlines at the right edge to match Figma */}
       <div className="absolute right-0 bottom-0 w-36 h-60 border-2 border-[#b85233]/20 rounded-t-full border-r-0 pointer-events-none z-0">
          <div className="absolute inset-2 border border-[#b85233]/15 rounded-t-full border-r-0" />

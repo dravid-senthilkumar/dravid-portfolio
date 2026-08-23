@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&amp;display=swap');
+      .cursive-monogram {
+        font-family: 'Alex Brush', 'Brush Script MT', 'Segoe Script', cursive, sans-serif;
+        font-size: 64px;
+        font-weight: bold;
+        fill: #FAF6EE;
+        text-anchor: middle;
+      }
+    </style>
+    <linearGradient id="terracottaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c45d3e"/>
+      <stop offset="50%" stop-color="#b85233"/>
+      <stop offset="100%" stop-color="#933b20"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Terracotta Squircle Background -->
+  <rect width="128" height="128" rx="34" fill="url(#terracottaGrad)"/>
+  
+  <!-- Subtle inner border ring -->
+  <rect x="5" y="5" width="118" height="118" rx="29" fill="none" stroke="#FAF6EE" stroke-opacity="0.25" stroke-width="2"/>
+
+  <!-- Signature Cursive Monogram "DS" -->
+  <g transform="rotate(-4 64 64)">
+    <text 
+      x="64" 
+      y="84" 
+      class="cursive-monogram"
+      filter="url(#shadow)"
+    >DS</text>
+  </g>
+</svg>

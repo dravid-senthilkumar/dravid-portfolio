@@ -40,7 +40,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 bg-[#FAF6EE] relative paper-texture">
+    <section id="contact" className="py-16 sm:py-24 bg-[#FAF6EE] relative paper-texture overflow-hidden scroll-mt-20">
       {/* Decorative Radial Background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-none z-0 bg-[radial-gradient(circle_at_center,rgba(184,82,51,0.02),transparent_70%)]" />
 

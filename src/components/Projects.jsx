@@ -38,7 +38,7 @@ export default function Projects() {
   ]
 
   return (
-    <section id="projects" className="py-24 bg-[#FAF6EE] border-b border-[#E6DFD3] relative paper-texture">
+    <section id="projects" className="py-16 sm:py-24 bg-[#FAF6EE] border-b border-[#E6DFD3] relative paper-texture overflow-hidden scroll-mt-20">
       {/* Decorative SVG curves to replicate Figma concentric lines */}
       <div className="absolute top-12 right-0 w-48 h-48 border border-[#b85233]/15 rounded-full pointer-events-none z-0 flex items-center justify-center">
         <div className="w-36 h-36 border border-[#b85233]/10 rounded-full" />

@@ -1,44 +1,37 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Phone, Mail, ArrowDown, FileText, Trophy } from 'lucide-react'
+import { Phone, Mail, ArrowDown, FileText } from 'lucide-react'
 import { LinkedinIcon, InstagramIcon } from './BrandIcons'
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-24 paper-texture bg-[#FAF6EE]">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 sm:py-24 paper-texture bg-[#FAF6EE]">
       {/* Decorative Warm Backdrops */}
       <div className="absolute top-0 right-0 w-[50%] h-[50%] pointer-events-none z-0 bg-[radial-gradient(circle_at_top_right,rgba(184,82,51,0.06),transparent_60%)]" />
       <div className="absolute bottom-0 left-0 w-[40%] h-[40%] pointer-events-none z-0 bg-[radial-gradient(circle_at_bottom_left,rgba(184,82,51,0.04),transparent_50%)]" />
 
       {/* Content Container */}
-      <div className="container mx-auto px-4 md:px-8 z-10 relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="container mx-auto px-4 md:px-8 z-10 relative grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         {/* Left Column: Heading and Details */}
-        <div className="lg:col-span-7 text-center lg:text-left space-y-8">
+        <div className="lg:col-span-7 text-center lg:text-left space-y-6 sm:space-y-8">
           <motion.div
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5"
+            className="flex justify-center lg:justify-start"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#b85233] bg-[#b85233]/5 border border-[#b85233]/15">
+            <span className="inline-block px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#b85233] bg-[#b85233]/5 border border-[#b85233]/15">
               Welcome to my space
             </span>
-            <a
-              href="#achievement"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider text-[#047857] bg-[#10b981]/10 border border-[#10b981]/30 hover:bg-[#10b981] hover:text-white transition-all shadow-sm group"
-            >
-              <Trophy className="w-3.5 h-3.5 text-[#10b981] group-hover:text-white" />
-              <span>★ 2025 Rising Star @ AskEVA</span>
-            </a>
           </motion.div>
 
           {/* Figma UI same-line big typography: "portfolio" + cursive script overlay */}
-          <div className="relative inline-block select-none my-4">
+          <div className="relative inline-flex items-center justify-center select-none my-2 sm:my-4 max-w-full">
             <motion.h1
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7 }}
-              className="text-[64px] sm:text-[90px] md:text-[120px] font-extrabold leading-none text-[#1C1C1E] tracking-tight font-serif-heading opacity-90"
+              className="text-[40px] xs:text-[50px] sm:text-[84px] md:text-[110px] lg:text-[120px] font-extrabold leading-none text-[#1C1C1E] tracking-tight font-serif-heading opacity-90 text-center"
             >
               portfolio
             </motion.h1>
@@ -46,9 +39,9 @@ export default function Hero() {
               initial={{ opacity: 0, rotate: -6, x: -10 }}
               animate={{ opacity: 1, rotate: -6, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[40%] w-full text-center pointer-events-none"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[35%] w-max text-center pointer-events-none"
             >
-              <span className="text-[36px] sm:text-[56px] md:text-[76px] font-signature text-[#b85233] drop-shadow-[0_2px_4px_rgba(250,246,238,0.8)] whitespace-nowrap block">
+              <span className="text-[20px] xs:text-[24px] sm:text-[44px] md:text-[64px] lg:text-[76px] font-signature text-[#b85233] drop-shadow-[0_2px_4px_rgba(250,246,238,0.8)] whitespace-nowrap block">
                 Dravid Senthilkumar
               </span>
             </motion.div>
@@ -58,12 +51,12 @@ export default function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-4"
+            className="space-y-3 sm:space-y-4"
           >
-            <h2 className="text-xl sm:text-2xl font-bold text-[#1C1C1E]/80 font-serif-heading">
+            <h2 className="text-lg sm:text-2xl font-bold text-[#1C1C1E]/80 font-serif-heading">
               From logic to seamless digital experiences.
             </h2>
-            <p className="text-[#1C1C1E]/60 text-sm sm:text-base max-w-lg mx-auto lg:mx-0 leading-relaxed font-outfit">
+            <p className="text-[#1C1C1E]/60 text-xs sm:text-base max-w-lg mx-auto lg:mx-0 leading-relaxed font-outfit">
               Specialized in crafting clean, high-performance web applications using MongoDB, Express.js, React, and Node.js. Passionate about building scalable backends and polished user interfaces.
             </p>
           </motion.div>
@@ -73,10 +66,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex flex-wrap gap-2 justify-center lg:justify-start max-w-lg"
+            className="flex flex-wrap gap-1.5 sm:gap-2 justify-center lg:justify-start max-w-lg"
           >
             {['JavaScript', 'React.js', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'Redis', 'BullMQ', 'Docker', 'Nginx', 'PM2', 'DigitalOcean'].map((tech) => (
-              <span key={tech} className="px-3 py-1.5 text-xs font-semibold rounded-lg bg-[#fffdfa] border border-[#e6dfd3] text-[#1C1C1E]/70 shadow-[0_2px_5px_rgba(0,0,0,0.01)]">
+              <span key={tech} className="px-2.5 sm:px-3 py-1 sm:py-1.5 text-[11px] sm:text-xs font-semibold rounded-lg bg-[#fffdfa] border border-[#e6dfd3] text-[#1C1C1E]/70 shadow-[0_2px_5px_rgba(0,0,0,0.01)]">
                 {tech}
               </span>
             ))}
@@ -87,19 +80,19 @@ export default function Hero() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4"
+            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2 sm:pt-4"
           >
             <a
               href="Image/Dravid_S_Resume.pdf"
               download
-              className="w-full sm:w-auto px-8 py-3.5 rounded-full font-bold uppercase tracking-wider text-xs bg-[#b85233] text-white hover:bg-[#a03e23] transition-all duration-300 flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-md shadow-[#b85233]/10"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold uppercase tracking-wider text-xs bg-[#b85233] text-white hover:bg-[#a03e23] transition-all duration-300 flex items-center justify-center gap-2 hover:-translate-y-0.5 shadow-md shadow-[#b85233]/10"
             >
               <FileText className="w-4 h-4" />
               Download Resume
             </a>
             <a
               href="#contact"
-              className="w-full sm:w-auto px-8 py-3.5 rounded-full font-bold uppercase tracking-wider text-xs bg-[#fffdfa] border border-[#e6dfd3] text-[#1C1C1E] hover:border-[#b85233] hover:bg-[#faf6ee] transition-all duration-300 flex items-center justify-center gap-2 hover:-translate-y-0.5"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold uppercase tracking-wider text-xs bg-[#fffdfa] border border-[#e6dfd3] text-[#1C1C1E] hover:border-[#b85233] hover:bg-[#faf6ee] transition-all duration-300 flex items-center justify-center gap-2 hover:-translate-y-0.5"
             >
               <Mail className="w-4 h-4 text-[#b85233]" />
               Let's Connect
@@ -108,25 +101,25 @@ export default function Hero() {
         </div>
 
         {/* Right Column: Profile Image styled in the elegant Arch shape */}
-        <div className="lg:col-span-5 flex justify-center items-center">
+        <div className="lg:col-span-5 flex justify-center items-center mt-4 lg:mt-0">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative w-72 sm:w-80 h-96 flex justify-center items-end"
+            className="relative w-64 xs:w-72 sm:w-80 h-80 sm:h-96 flex justify-center items-end"
           >
             {/* Orange background decorative arch element */}
-            <div className="absolute -left-4 top-10 w-24 h-48 bg-[#b85233] rounded-t-full opacity-90" />
+            <div className="absolute -left-2 sm:-left-4 top-8 sm:top-10 w-20 sm:w-24 h-40 sm:h-48 bg-[#b85233] rounded-t-full opacity-90" />
             
             {/* Concentric circle vector styling behind */}
-            <div className="absolute -left-12 bottom-6 w-32 h-32 border border-[#b85233]/20 rounded-full flex items-center justify-center pointer-events-none">
-              <div className="w-24 h-24 border border-[#b85233]/15 rounded-full flex items-center justify-center">
-                <div className="w-16 h-16 border border-[#b85233]/10 rounded-full" />
+            <div className="absolute -left-6 sm:-left-12 bottom-6 w-24 sm:w-32 h-24 sm:h-32 border border-[#b85233]/20 rounded-full flex items-center justify-center pointer-events-none">
+              <div className="w-18 sm:w-24 h-18 sm:h-24 border border-[#b85233]/15 rounded-full flex items-center justify-center">
+                <div className="w-12 sm:w-16 h-12 sm:h-16 border border-[#b85233]/10 rounded-full" />
               </div>
             </div>
 
             {/* Custom concentric arches outlines */}
-            <div className="absolute right-0 top-1/4 w-28 h-40 border border-[#b85233]/25 rounded-t-full border-b-0 pointer-events-none z-0">
+            <div className="absolute right-0 top-1/4 w-20 sm:w-28 h-32 sm:h-40 border border-[#b85233]/25 rounded-t-full border-b-0 pointer-events-none z-0">
               <div className="absolute inset-2 border border-[#b85233]/15 rounded-t-full border-b-0" />
             </div>
 
@@ -140,7 +133,7 @@ export default function Hero() {
             </div>
 
             {/* Floating Contact Icons Panel */}
-            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3.5 px-6 py-3.5 rounded-full bg-[#fffdfa] border border-[#e6dfd3] shadow-lg z-20">
+            <div className="absolute -bottom-5 sm:-bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3 sm:gap-3.5 px-5 sm:px-6 py-3 sm:py-3.5 rounded-full bg-[#fffdfa] border border-[#e6dfd3] shadow-lg z-20">
               <a
                 href="http://linkedin.com/in/dravid-senthilkumar/"
                 target="_blank"

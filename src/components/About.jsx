@@ -36,13 +36,13 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="py-24 bg-[#FAF6EE] border-b border-[#E6DFD3] relative paper-texture">
+    <section id="about" className="py-16 sm:py-24 bg-[#FAF6EE] border-b border-[#E6DFD3] relative paper-texture overflow-hidden scroll-mt-20">
       {/* Decorative vectors */}
       <div className="absolute top-1/4 right-0 w-80 h-80 rounded-full bg-[#b85233]/3 blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 left-0 w-80 h-80 rounded-full bg-[#b85233]/2 blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left Side: Profile Photo in Arch Frame with Concentric circles backdrops */}
           <div className="lg:col-span-5 flex justify-center order-2 lg:order-1">
             <motion.div
@@ -50,17 +50,17 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative w-72 sm:w-80 h-[400px] flex justify-center items-end"
+              className="relative w-64 xs:w-72 sm:w-80 h-[350px] sm:h-[400px] flex justify-center items-end"
             >
               {/* Concentric lines background vector overlay */}
-              <div className="absolute -left-8 top-16 w-36 h-36 border border-[#b85233]/25 rounded-full flex items-center justify-center pointer-events-none">
-                <div className="w-28 h-28 border border-[#b85233]/15 rounded-full flex items-center justify-center">
-                  <div className="w-20 h-20 border border-[#b85233]/10 rounded-full" />
+              <div className="absolute -left-4 sm:-left-8 top-16 w-28 sm:w-36 h-28 sm:h-36 border border-[#b85233]/25 rounded-full flex items-center justify-center pointer-events-none">
+                <div className="w-20 sm:w-28 h-20 sm:h-28 border border-[#b85233]/15 rounded-full flex items-center justify-center">
+                  <div className="w-14 sm:w-20 h-14 sm:h-20 border border-[#b85233]/10 rounded-full" />
                 </div>
               </div>
 
               {/* Offset decorative terracotta shape */}
-              <div className="absolute left-6 top-6 w-20 h-40 bg-[#b85233] rounded-t-full opacity-80" />
+              <div className="absolute left-4 sm:left-6 top-6 w-16 sm:w-20 h-32 sm:h-40 bg-[#b85233] rounded-t-full opacity-80" />
 
               {/* Arch Top Frame */}
               <div className="absolute inset-0 rounded-t-full overflow-hidden border-4 border-[#e6dfd3] bg-[#fffdfa] shadow-[0_8px_25px_rgba(0,0,0,0.02)] z-10">
@@ -72,13 +72,13 @@ export default function About() {
               </div>
 
               {/* Floating Badge */}
-              <div className="absolute -top-4 -right-4 flex items-center gap-3 px-4 py-3.5 rounded-2xl bg-[#fffdfa] border border-[#e6dfd3] shadow-lg z-20">
-                <div className="p-2 rounded-xl bg-[#b85233]/10 text-[#b85233]">
-                  <Award className="w-5 h-5" />
+              <div className="absolute -top-3 -right-2 sm:-top-4 sm:-right-4 flex items-center gap-2.5 sm:gap-3 px-3.5 sm:px-4 py-2.5 sm:py-3.5 rounded-xl sm:rounded-2xl bg-[#fffdfa] border border-[#e6dfd3] shadow-lg z-20">
+                <div className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-[#b85233]/10 text-[#b85233]">
+                  <Award className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
                 <div>
-                  <div className="text-[10px] text-[#1C1C1E]/50 font-bold uppercase tracking-wider">Developer Level</div>
-                  <div className="text-xs font-extrabold text-[#1C1C1E]">Full Stack MERN</div>
+                  <div className="text-[9px] sm:text-[10px] text-[#1C1C1E]/50 font-bold uppercase tracking-wider">Developer Level</div>
+                  <div className="text-[11px] sm:text-xs font-extrabold text-[#1C1C1E]">Full Stack MERN</div>
                 </div>
               </div>
             </motion.div>
