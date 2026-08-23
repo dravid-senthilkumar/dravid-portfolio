@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { CheckCircle2, Award, Zap, Code, ShieldCheck } from 'lucide-react'
+import { CheckCircle2, Award, Zap, Code, ShieldCheck, Network } from 'lucide-react'
 
 export default function About() {
   const highlights = [
@@ -27,6 +27,11 @@ export default function About() {
       icon: <ShieldCheck className="w-6 h-6 text-[#b85233]" />,
       title: "Clean Databases",
       desc: "Designing clean database schemas and handling complex CRUD architectures in MongoDB."
+    },
+    {
+      icon: <Network className="w-6 h-6 text-[#b85233]" />,
+      title: "System Design",
+      desc: "Architecting scalable microservices, background task queues, and load balancing reverse-proxies."
     }
   ]
 
@@ -120,8 +125,8 @@ export default function About() {
           </div>
         </div>
 
-        {/* Core Pillars Cards (Three Columns) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24">
+        {/* Core Pillars Cards (Four Columns) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-24">
           {cards.map((card, index) => (
             <motion.div
               key={index}

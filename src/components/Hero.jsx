@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Phone, Mail, ArrowDown, FileText } from 'lucide-react'
+import { Phone, Mail, ArrowDown, FileText, Trophy } from 'lucide-react'
 import { LinkedinIcon, InstagramIcon } from './BrandIcons'
 
 export default function Hero() {
@@ -18,11 +18,18 @@ export default function Hero() {
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex justify-center lg:justify-start"
+            className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5"
           >
             <span className="inline-block px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#b85233] bg-[#b85233]/5 border border-[#b85233]/15">
               Welcome to my space
             </span>
+            <a
+              href="#achievement"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider text-[#047857] bg-[#10b981]/10 border border-[#10b981]/30 hover:bg-[#10b981] hover:text-white transition-all shadow-sm group"
+            >
+              <Trophy className="w-3.5 h-3.5 text-[#10b981] group-hover:text-white" />
+              <span>★ 2025 Rising Star @ AskEVA</span>
+            </a>
           </motion.div>
 
           {/* Figma UI same-line big typography: "portfolio" + cursive script overlay */}
@@ -68,7 +75,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="flex flex-wrap gap-2 justify-center lg:justify-start max-w-lg"
           >
-            {['JavaScript', 'React.js', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'Redis', 'BullMQ', 'Docker', 'Nginx'].map((tech) => (
+            {['JavaScript', 'React.js', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'Redis', 'BullMQ', 'Docker', 'Nginx', 'PM2', 'DigitalOcean'].map((tech) => (
               <span key={tech} className="px-3 py-1.5 text-xs font-semibold rounded-lg bg-[#fffdfa] border border-[#e6dfd3] text-[#1C1C1E]/70 shadow-[0_2px_5px_rgba(0,0,0,0.01)]">
                 {tech}
               </span>

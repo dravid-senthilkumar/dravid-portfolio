@@ -23,6 +23,7 @@ export default function Navbar() {
     { name: 'About me', href: '#about' },
     { name: 'Tech Stack', href: '#skills' },
     { name: 'Experience', href: '#experience' },
+    { name: 'Honors', href: '#achievement' },
     { name: 'My projects', href: '#projects' },
   ]
 

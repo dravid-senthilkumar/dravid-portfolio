@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Code2, Server, Database } from 'lucide-react'
 
-// SVG logos configured to render with matching colors
+// SVG logos configured to render with native colors
 function SocketIOLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-12 h-12 text-[#1C1C1E]/80" fill="currentColor">
+    <svg viewBox="0 0 24 24" className="w-12 h-12 text-[#010101]" fill="currentColor">
       <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4.138c4.342 0 7.862 3.52 7.862 7.862 0 4.342-3.52 7.862-7.862 7.862-4.342 0-7.862-3.52-7.862-7.862 0-4.342 3.52-7.862 7.862-7.862zm0 2.213L7.71 13.918h3.314v3.729L16.29 10.96h-3.314V6.351z"/>
     </svg>
   )
@@ -13,7 +13,7 @@ function SocketIOLogo() {
 
 function RedisLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-12 h-12 text-[#b85233]" fill="currentColor">
+    <svg viewBox="0 0 24 24" className="w-12 h-12 text-[#d82c20]" fill="currentColor">
       <path d="M12 0L2.4 4.8v14.4L12 24l9.6-4.8V4.8L12 0zm7.2 16.8l-7.2 3.6-7.2-3.6V7.2l7.2-3.6 7.2 3.6v9.6zM7.2 9.6h9.6v2.4H7.2V9.6zm0 4.8h9.6v2.4H7.2v-2.4z"/>
     </svg>
   )
@@ -21,9 +21,9 @@ function RedisLogo() {
 
 function BullMQLogo() {
   return (
-    <svg viewBox="0 0 24 24" className="w-12 h-12 text-[#b85233]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg viewBox="0 0 24 24" className="w-12 h-12 text-[#FF5200]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-      <circle cx="12" cy="9.5" r="2.5" fill="currentColor" className="text-[#b85233]" />
+      <circle cx="12" cy="9.5" r="2.5" fill="currentColor" className="text-[#FF5200]" />
     </svg>
   )
 }
@@ -40,6 +40,22 @@ function NginxLogo() {
   return (
     <svg viewBox="0 0 24 24" className="w-12 h-12 text-[#009639]" fill="currentColor">
       <path d="M12 0L1.7 6v12L12 24l10.3-6V6L12 0zm8.3 16.8L12 21.6 3.7 16.8V7.2L12 2.4l8.3 4.8v9.6zM8.3 7.2v9.6h2.4L13.7 11V16.8h2V7.2h-2.4L10.3 13V7.2h-2z"/>
+    </svg>
+  )
+}
+
+function PM2Logo() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-12 h-12 text-[#2B82F6]" fill="currentColor">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/>
+    </svg>
+  )
+}
+
+function DigitalOceanLogo() {
+  return (
+    <svg viewBox="0 0 24 24" className="w-12 h-12 text-[#0080FF]" fill="currentColor">
+      <path d="M12.012 0C5.394 0 0 5.394 0 12.012c0 5.485 3.69 10.116 8.755 11.533l.035-2.923c-3.414-1.066-5.918-4.24-5.918-7.986 0-4.636 3.77-8.406 8.407-8.406 4.636 0 8.406 3.77 8.406 8.406 0 3.018-1.6 5.666-4.012 7.15l1.642 2.457c3.486-2.222 5.795-6.071 5.795-10.46C23.11 5.394 17.702 0 12.012 0zm-1.066 14.59v2.107H8.84v-2.108h2.106zm4.212 0v2.107h-2.107v-2.108h2.107zM12 9.278v2.107H9.892V9.278H12z"/>
     </svg>
   )
 }
@@ -126,11 +142,18 @@ export default function Skills() {
       detail: "Reverse proxy, load balancing, SSL termination configurations"
     },
     {
-      name: "Html5 & Css3",
-      logo: "Image/html.css1.png",
-      category: "frontend",
-      level: "95%",
-      detail: "Flexbox, Grid System, Responsive Layouts, Animations"
+      name: "PM2",
+      logo: <PM2Logo />,
+      category: "database",
+      level: "85%",
+      detail: "Production process management, clustering, auto-restarts, log monitoring"
+    },
+    {
+      name: "DigitalOcean",
+      logo: <DigitalOceanLogo />,
+      category: "database",
+      level: "80%",
+      detail: "VPS hosting, firewall configurations, managed databases, live deployments"
     }
   ]
 

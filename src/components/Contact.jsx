@@ -1,23 +1,14 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Send, Loader2 } from 'lucide-react'
+import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react'
 import { LinkedinIcon, InstagramIcon } from './BrandIcons'
 import confetti from 'canvas-confetti'
 
 export default function Contact() {
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbwWaCoLfb3Ca5MrU4Wv9svERt81lk79cTiYnZMinifA4JGXfd_eViBo3UCjVfEnvqo_/exec'
-
   const [formData, setFormData] = useState({
     Name: '',
-    Mobile: '',
-    Email: '',
-    Intent: 'Hiring',
     Message: ''
   })
-  
-  const [loading, setLoading] = useState(false)
-  const [statusMsg, setStatusMsg] = useState('')
-  const [success, setSuccess] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -27,59 +18,25 @@ export default function Contact() {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleWhatsAppSubmit = (e) => {
     e.preventDefault()
     
-    if (!formData.Name || !formData.Email || !formData.Message) {
-      setStatusMsg("Please fill in all required fields.")
-      setSuccess(false)
-      return
-    }
+    if (!formData.Name || !formData.Message) return
 
-    setLoading(true)
-    setStatusMsg("")
+    // Construct formatted message string for WhatsApp
+    const formattedMessage = `Hi Dravid,\n\nMy name is ${formData.Name}.\n\n${formData.Message}`
+    const whatsappUrl = `https://wa.me/919585759609?text=${encodeURIComponent(formattedMessage)}`
     
-    const data = new FormData()
-    data.append('Name', formData.Name)
-    data.append('Mobile', formData.Mobile)
-    data.append('Email', formData.Email)
-    data.append('Intent', formData.Intent)
-    
-    const finalMessage = `[Intent: ${formData.Intent}]\n\n${formData.Message}`
-    data.append('Message', finalMessage)
+    // Celebrate with festive confetti
+    confetti({
+      particleCount: 80,
+      spread: 60,
+      origin: { y: 0.8 },
+      colors: ['#25D366', '#b85233', '#1c1c1e']
+    })
 
-    fetch(scriptURL, { method: 'POST', body: data })
-      .then(response => {
-        setLoading(false)
-        setSuccess(true)
-        setStatusMsg("Message sent successfully!")
-        
-        confetti({
-          particleCount: 80,
-          spread: 60,
-          origin: { y: 0.8 },
-          colors: ['#b85233', '#1c1c1e', '#ffffff']
-        })
-
-        setFormData({
-          Name: '',
-          Mobile: '',
-          Email: '',
-          Intent: 'Hiring',
-          Message: ''
-        })
-
-        setTimeout(() => {
-          setStatusMsg("")
-          setSuccess(false)
-        }, 5000)
-      })
-      .catch(error => {
-        setLoading(false)
-        setSuccess(false)
-        setStatusMsg("An error occurred. Please try again.")
-        console.error('Error!', error.message)
-      })
+    // Open WhatsApp in a new tab directly
+    window.open(whatsappUrl, '_blank')
   }
 
   return (
@@ -92,22 +49,19 @@ export default function Contact() {
           {/* Left Column: Hand-drawn bubble and info items */}
           <div className="lg:col-span-5 space-y-10 flex flex-col justify-between">
             <div className="space-y-6">
-              {/* Hand-drawn SVG Speech Bubble to match Figma */}
+              {/* Hand-drawn SVG Speech Bubble */}
               <div className="flex justify-center lg:justify-start">
                 <svg viewBox="0 0 160 110" className="w-48 h-auto text-[#1C1C1E]" fill="none" stroke="currentColor">
-                  {/* Speech bubble path */}
                   <path 
                     d="M10,40 C10,18 35,10 80,10 C125,10 150,18 150,40 C150,62 125,70 80,70 C70,70 58,74 50,82 C48,84 47,85 48,80 C49,76 51,73 50,70 C20,70 10,62 10,40 Z" 
                     strokeWidth="3" 
                     strokeLinecap="round" 
                     strokeLinejoin="round" 
                   />
-                  {/* Little highlight lines above */}
                   <line x1="28" y1="4" x2="31" y2="8" strokeWidth="2.5" strokeLinecap="round" />
                   <line x1="40" y1="3" x2="40" y2="7" strokeWidth="2.5" strokeLinecap="round" />
                   <line x1="52" y1="4" x2="49" y2="8" strokeWidth="2.5" strokeLinecap="round" />
                   
-                  {/* TEXT */}
                   <text 
                     x="80" 
                     y="38" 
@@ -135,9 +89,9 @@ export default function Contact() {
                 </svg>
               </div>
 
-              {/* Informative description matching figma container styling */}
+              {/* Informative description */}
               <div className="p-5 rounded-2xl bg-[#b85233]/5 border border-[#b85233]/15 text-[#1C1C1E]/70 text-xs sm:text-sm font-semibold">
-                Have a question or want to work together? Get in touch—I'd love to hear from you.
+                Have a question or want to work together? Fill out the quick message enquiry below to chat directly with me on WhatsApp!
               </div>
 
               {/* Direct Info list */}
@@ -155,12 +109,12 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-full border border-[#e6dfd3] bg-[#fffdfa] flex items-center justify-center text-[#b85233]">
+                  <div className="w-11 h-11 rounded-full border border-[#e6dfd3] bg-[#fffdfa] flex items-center justify-center text-[#25D366]">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="block text-[10px] text-[#1C1C1E]/50 font-bold uppercase tracking-wide">Phone Number</span>
-                    <a href="tel:9585759609" className="text-sm font-bold text-[#1C1C1E] hover:text-[#b85233] transition-colors">
+                    <span className="block text-[10px] text-[#1C1C1E]/50 font-bold uppercase tracking-wide">Direct WhatsApp & Call</span>
+                    <a href="https://wa.me/919585759609" target="_blank" rel="noopener noreferrer" className="text-sm font-bold text-[#1C1C1E] hover:text-[#25D366] transition-colors">
                       +91 9585759609
                     </a>
                   </div>
@@ -204,10 +158,20 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right Column: Google Sheet Form */}
+          {/* Right Column: Direct WhatsApp Enquiry Form */}
           <div className="lg:col-span-7">
             <div className="p-6 md:p-8 rounded-3xl bg-[#fffdfa] border border-[#e6dfd3] shadow-[0_4px_25px_rgba(0,0,0,0.015)]">
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-[#e6dfd3]/60">
+                <div className="p-2.5 rounded-2xl bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/20">
+                  <MessageCircle className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#1C1C1E] font-serif-heading">Direct WhatsApp Enquiry</h3>
+                  <p className="text-xs text-[#1C1C1E]/50 font-outfit">Send a pre-filled enquiry straight to +91 9585759609</p>
+                </div>
+              </div>
+
+              <form onSubmit={handleWhatsAppSubmit} className="space-y-6">
                 <div className="space-y-1.5">
                   <label htmlFor="Name" className="text-[10px] font-bold uppercase tracking-wider text-[#1C1C1E]/50">
                     Full Name <span className="text-[#b85233]">*</span>
@@ -219,69 +183,12 @@ export default function Contact() {
                     value={formData.Name}
                     onChange={handleChange}
                     required
-                    placeholder="John Doe"
-                    className="w-full px-4 py-3 rounded-xl bg-[#faf6ee]/50 border border-[#e6dfd3] text-[#1C1C1E] placeholder-[#1C1C1E]/30 focus:outline-none focus:border-[#b85233] focus:ring-1 focus:ring-[#b85233] transition-colors duration-200 text-sm font-outfit"
+                    placeholder="Your Name"
+                    className="w-full px-4 py-3 rounded-xl bg-[#faf6ee]/50 border border-[#e6dfd3] text-[#1C1C1E] placeholder-[#1C1C1E]/30 focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] transition-colors duration-200 text-sm font-outfit"
                   />
                 </div>
 
-                <div className="space-y-1.5">
-                  <label htmlFor="Mobile" className="text-[10px] font-bold uppercase tracking-wider text-[#1C1C1E]/50">
-                    Mobile Number
-                  </label>
-                  <input
-                    type="tel"
-                    name="Mobile"
-                    id="Mobile"
-                    value={formData.Mobile}
-                    onChange={handleChange}
-                    placeholder="+91 9876543210"
-                    className="w-full px-4 py-3 rounded-xl bg-[#faf6ee]/50 border border-[#e6dfd3] text-[#1C1C1E] placeholder-[#1C1C1E]/30 focus:outline-none focus:border-[#b85233] focus:ring-1 focus:ring-[#b85233] transition-colors duration-200 text-sm font-outfit"
-                  />
-                </div>
 
-                <div className="space-y-1.5">
-                  <label htmlFor="Email" className="text-[10px] font-bold uppercase tracking-wider text-[#1C1C1E]/50">
-                    Email Address <span className="text-[#b85233]">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    name="Email"
-                    id="Email"
-                    value={formData.Email}
-                    onChange={handleChange}
-                    required
-                    placeholder="johndoe@gmail.com"
-                    className="w-full px-4 py-3 rounded-xl bg-[#faf6ee]/50 border border-[#e6dfd3] text-[#1C1C1E] placeholder-[#1C1C1E]/30 focus:outline-none focus:border-[#b85233] focus:ring-1 focus:ring-[#b85233] transition-colors duration-200 text-sm font-outfit"
-                  />
-                </div>
-
-                {/* Intent Select Badges */}
-                <div className="space-y-2.5">
-                  <label className="text-[10px] font-bold uppercase tracking-wider text-[#1C1C1E]/50">
-                    Purpose of Contact / Intent <span className="text-[#b85233]">*</span>
-                  </label>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                    {[
-                      { id: 'Hiring', label: '💼 Hiring' },
-                      { id: 'Collaboration', label: '🤝 Collaborate' },
-                      { id: 'Project', label: '🚀 Freelance' },
-                      { id: 'General', label: '❓ General' }
-                    ].map((item) => (
-                      <button
-                        key={item.id}
-                        type="button"
-                        onClick={() => setFormData(prev => ({ ...prev, Intent: item.id }))}
-                        className={`py-2.5 px-2 rounded-xl text-[11px] font-bold border transition-all duration-300 ${
-                          formData.Intent === item.id
-                            ? 'bg-[#b85233] text-white border-[#b85233] shadow-md shadow-[#b85233]/15'
-                            : 'bg-[#faf6ee]/50 text-[#1C1C1E]/60 border-[#e6dfd3] hover:text-[#1C1C1E]'
-                        }`}
-                      >
-                        {item.label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
 
                 <div className="space-y-1.5">
                   <label htmlFor="Message" className="text-[10px] font-bold uppercase tracking-wider text-[#1C1C1E]/50">
@@ -294,44 +201,19 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows="4"
-                    placeholder="Let's build a MERN stack application..."
-                    className="w-full px-4 py-3 rounded-xl bg-[#faf6ee]/50 border border-[#e6dfd3] text-[#1C1C1E] placeholder-[#1C1C1E]/30 focus:outline-none focus:border-[#b85233] focus:ring-1 focus:ring-[#b85233] transition-colors duration-200 text-sm font-outfit resize-none"
+                    placeholder="Hi Dravid, I'd like to discuss a project..."
+                    className="w-full px-4 py-3 rounded-xl bg-[#faf6ee]/50 border border-[#e6dfd3] text-[#1C1C1E] placeholder-[#1C1C1E]/30 focus:outline-none focus:border-[#25D366] focus:ring-1 focus:ring-[#25D366] transition-colors duration-200 text-sm font-outfit resize-none"
                   />
                 </div>
 
-                {/* Submit button */}
+                {/* Direct WhatsApp Submit Button */}
                 <button
                   type="submit"
-                  disabled={loading}
-                  className="w-full py-3.5 rounded-full bg-[#b85233] text-white hover:bg-[#a03e23] transition-all duration-300 font-bold uppercase tracking-wider text-xs flex items-center justify-center gap-2 hover:-translate-y-0.5 disabled:opacity-50 disabled:pointer-events-none"
+                  className="w-full py-4 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white transition-all duration-300 font-bold uppercase tracking-wider text-xs flex items-center justify-center gap-2.5 hover:-translate-y-0.5 shadow-md shadow-[#25D366]/20 cursor-pointer"
                 >
-                  {loading ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      Sending Message...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-4 h-4" />
-                      Send Message
-                    </>
-                  )}
+                  <MessageCircle className="w-4 h-4 fill-white" />
+                  Send WhatsApp Enquiry
                 </button>
-
-                {/* Status messages */}
-                {statusMsg && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className={`text-center text-xs font-mono p-3 rounded-xl border ${
-                      success 
-                        ? 'text-green-600 bg-green-50 border-green-200' 
-                        : 'text-red-600 bg-red-50 border-red-200'
-                    }`}
-                  >
-                    {statusMsg}
-                  </motion.div>
-                )}
               </form>
             </div>
           </div>

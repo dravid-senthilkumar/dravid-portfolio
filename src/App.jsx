@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Skills from './components/Skills'
 import Experience from './components/Experience'
+import AwardShowcase from './components/AwardShowcase'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -16,7 +17,7 @@ export default function App() {
 
       {/* Main Structural Blocks */}
       <main>
-        {/* Animated Three.js Hero Landing */}
+        {/* Animated Hero Landing */}
         <Hero />
 
         {/* Detailed About Dravid */}
@@ -28,10 +29,13 @@ export default function App() {
         {/* Work Timeline & Certifications */}
         <Experience />
 
+        {/* Official Recognition & Rising Star Showcase */}
+        <AwardShowcase />
+
         {/* Real-world Ported Applications Showcase */}
         <Projects />
 
-        {/* Interactive Google Sheet Contact Console */}
+        {/* Interactive Contact Console */}
         <Contact />
       </main>
 
@@ -40,3 +44,5 @@ export default function App() {
     </div>
   )
 }
+
+
